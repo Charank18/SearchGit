@@ -9,10 +9,20 @@ const UserProfile = ({
   public_repos,
   html_url,
 }) => {
+  const openHtmlUrl = () => {
+    window.open(html_url, "_blank");
+  };
+
   return (
     <section className="user-profile">
-      <img className="user-img" src={avatar_url} alt={name} />
-      <h4 className="user-title"> {name}</h4>
+      <img
+        className="user-img"
+        src={avatar_url}
+        alt={name}
+        onClick={openHtmlUrl}
+        style={{ cursor: "pointer" }}
+      />
+      <h4 className="user-title">{name}</h4>
       <div className="followers-section">
         <div className="follower-nested">
           <FcLike />
